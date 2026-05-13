@@ -18,14 +18,15 @@ export class MusicPlayer implements OnDestroy {
   }
 
   toggleMusic() {
-    if (this.isPlaying()) {
-      this.audio.pause();
-      this.isPlaying.set(false);
-    } else {
-      this.audio.play().catch(() => {});
-      this.isPlaying.set(true);
-    }
+  if (this.isPlaying()) {
+    this.audio.pause();
+    this.isPlaying.set(false);
+  } else {
+    this.audio.play()
+      .then(() => this.isPlaying.set(true))
+      .catch((err) => console.error('Erro ao tocar música:', err));
   }
+}
 
   ngOnDestroy() {
     this.audio.pause();

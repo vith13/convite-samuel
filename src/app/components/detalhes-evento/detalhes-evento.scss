@@ -20,6 +20,25 @@
   --text-muted:    #5a6b52;
 }
 
+
+/* ─── Tela de detalhes ───────────────────────── */
+.detalhes-screen {
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 1.5rem 3rem;
+
+  background:
+    radial-gradient(ellipse at 50% 0%,   #9ec390 0%,  transparent 60%),
+    radial-gradient(ellipse at 10% 100%, #c8e0c0 0%,  transparent 50%),
+    radial-gradient(ellipse at 90% 80%,  #d4e8cc 0%,  transparent 50%),
+    linear-gradient(180deg, #edf6e5 0%, #f0f6ea 100%);
+}
+
 /* ─── Tela principal ─────────────────────────── */
 .hero-screen {
   width: 100%;
@@ -384,4 +403,27 @@
   strong {
     color: #6a9a50;
   }
+}
+
+.fralda-destaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: rgba(141,184,120,0.20);
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.8rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.fralda-tag {
+  background: linear-gradient(160deg, #8db878 0%, #6a9a50 100%);
+  color: white;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.4rem;
+  padding: 0.1rem 0.8rem;
+  border-radius: 8px;
 }
