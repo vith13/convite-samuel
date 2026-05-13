@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Gluten:wght@400;700&family=Nunito:wght@400;600;700&display=swap');
+@font-face {
+  font-family: 'Handy Casual';
+  src: url('/handy-casual.woff2') format('woff2'),
+       url('/handy-casual.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ─── Variáveis ─────────────────────────────── */
+:host {
+  --green-light:   #e8f0e0;
+  --green-mid:     #a8c48a;
+  --green-dark:    #6a8f5a;
+  --wood-light:    #c9975e;
+  --wood-dark:     #8b5e35;
+  --cream:         #f4f8ee;
+  --text-muted:    #5a6b52;
+}
+
+/* ─── Tela principal ─────────────────────────── */
+.hero-screen {
+  width: 100%;
+  min-height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1.5rem 3rem;
+
+  background:
+    radial-gradient(ellipse at 50% 0%,   #9ec390 0%,  transparent 60%),
+    radial-gradient(ellipse at 10% 100%, #c8e0c0 0%,  transparent 50%),
+    radial-gradient(ellipse at 90% 80%,  #d4e8cc 0%,  transparent 50%),
+    linear-gradient(180deg, #edf6e5 0%, #f0f6ea 100%);
+}
+
+/* ─── Folhas topo ───────────────────────────── */
+.leaves-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 55%;
+  background-image: url('/leaves-top.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  opacity: 0.55;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Espelha as folhas no rodapé */
+.leaves-bottom {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 35%;
+  background-image: url('/leaves-top.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  opacity: 0.90;
+  z-index: 1;
+  transform: rotate(180deg);
+  pointer-events: none;
+  margin-top: -90px;
+}
+
+/* ─── Gradiente inferior ────────────────────── */
+.bottom-gradient {
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(180deg, transparent 0%, rgba(168,196,138,0.18) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ─── Conteúdo central ───────────────────────── */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeHero 1s ease both;
+  padding-top: 60px; /* espaço para as folhas do topo */
+}
+
+@keyframes floatBearText {
+  0%, 100% { transform: translateX(-50%) translateY(0px);   }
+  50%       { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ─── Ursinho ────────────────────────────────── */
+.bear-image {
+  width: 100%;
+  filter: drop-shadow(0 14px 22px rgba(0,0,0,0.12));
+  animation: floatBearImg 4s ease-in-out infinite;
+  display: block;
+}
+
+@keyframes floatBearImg {
+  0%, 100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ─── Texto sobre a placa ────────────────────── */
+.placa-text {
+  position: absolute;
+  bottom: 32%;        /* ajuste esse valor para subir/descer */
+  left: 26%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+  gap: 2px;
+  animation: floatBearImg 4s ease-in-out infinite;
+}
+
+
+
+.placa-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.90rem;
+  font-weight: 700;
+  color: #77aa5f;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.placa-name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  color: #77aa5f;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+/* ─── Wrapper do ursinho ─────────────────────── */
+.bear-wrapper {
+  position: relative;
+  width: 380px;
+  max-width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: -80px;
+  align-items: center;
+}
+
+/* ─── Texto de convite ───────────────────────── */
+.invitation-text {
+  margin-top: -120px;
+  max-width: 300px;
+  font-family: 'Gluten', sans-serif;
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-weight: 600;
+  align-items: center;
+
+}
+
+/* ─── Mobile pequeno ──────────────────────────── */
+@media (max-width: 380px) {
+  .bear-image  { width: 180px; }
+  .baby-name   { font-size: 3rem; letter-spacing: 2px; }
+  .open-button { width: 150px; height: 150px; }
+  .btn-text    { font-size: 1.6rem; }
+}
+.detalhes-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* centraliza os filhos */
+  text-align: center;
+  animation: fadeIn 1s ease both;
+  padding-top: 40px;
+  align-self: center;
+}
+
+.invitation-text {
+  margin-top: -120px;
+  max-width: 300px;
+  font-family: 'Gluten', sans-serif;
+  font-size: 20px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+}
+
+
+.event-card {
+  margin-top: 1rem;
+  background: linear-gradient(160deg, #8db878 0%, #6a9a50 100%);
+  border-radius: 16px;
+  padding: 0.7rem 1.8rem;
+  display: inline-flex; /* troque flex por inline-flex */
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  box-shadow: 0 8px 24px rgba(100,150,80,0.30);
+  outline: 3px dashed rgba(255,255,255,0.45);
+  outline-offset: -8px;
+}
+
+.event-card-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.event-date {
+  font-family: 'Gluten', cursive;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.event-time {
+  font-family: 'Gluten', cursive;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.90);
+}
+
+
+
+/* ─── Botões de ação ─────────────────────────── */
+.action-buttons {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  position: relative;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: linear-gradient(160deg, #8db878 0%, #6a9a50 100%);
+  box-shadow:
+    0 8px 20px rgba(100,150,80,0.35),
+    0 0 0 4px rgba(255,255,255,0.60),
+    0 0 0 6px rgba(100,150,80,0.20);
+  transition: transform 0.25s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    border: 2px dashed rgba(255,255,255,0.50);
+    pointer-events: none;
+  }
+}
+
+.action-btn:active {
+  transform: scale(0.94);
+}
+
+.action-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ─── Modal ──────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal-box {
+  background: #f4f8ee;
+  border-radius: 28px 28px 0 0;
+  padding: 2rem 1.5rem 3rem;
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0);    }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.modal-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  color: #6a9a50;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.modal-section {
+  margin-bottom: 1rem;
+}
+
+.modal-section-title {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #6a9a50;
+  margin-bottom: 0.4rem;
+}
+
+.modal-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  li {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    padding: 0.4rem 0.8rem;
+    background: rgba(141,184,120,0.15);
+    border-radius: 10px;
+  }
+}
+
+.modal-obs {
+  margin-top: 1.2rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.6;
+
+  strong {
+    color: #6a9a50;
+  }
+}

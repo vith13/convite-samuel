@@ -1,0 +1,35 @@
+:host {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100;
+}
+
+.music-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgb(111, 154, 98);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    color: #f9f9f9;
+  }
+
+  &.playing {
+    background: linear-gradient(135deg, #c4ddc1 0%, #a8c9a4 100%);
+    svg { color: white; }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

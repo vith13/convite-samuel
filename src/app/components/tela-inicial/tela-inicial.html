@@ -1,0 +1,47 @@
+<div class="hero-screen">
+
+  <div class="leaves-overlay"></div>
+  <div class="leaves-bottom"></div>
+
+  <div class="hero-content">
+
+    <!-- Container com o ursinho e texto sobreposto -->
+    <div class="bear-wrapper">
+      <img
+        src="ursinho.png"
+        alt="Ursinho"
+        class="bear-image"
+      />
+
+      <!-- Texto posicionado sobre a placa de madeira da imagem -->
+      <div class="placa-text">
+        <span class="placa-subtitle">Chá de bebê do</span>
+        <span class="placa-name">SAMUEL</span>
+      </div>
+    </div>
+
+    <p class="invitation-text">
+      Muita fofura vindo por aí!<br></p>
+
+      <p class="click-text">
+         Clique no botão abaixo<br>
+         para abrir o convite!
+        </p>
+
+    <button
+      class="open-button"
+      (click)="abrirConvite()"
+    >
+      <span class="btn-inner">
+        <span class="btn-text">clique<br>aqui</span>
+        <span class="btn-heart">♥</span>
+      </span>
+    </button>
+
+    <div class="paw-icon">🐾</div>
+
+  </div>
+
+  <div class="bottom-gradient"></div>
+
+</div>

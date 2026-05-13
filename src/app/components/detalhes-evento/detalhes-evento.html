@@ -1,0 +1,102 @@
+<div class="detalhes-screen">
+
+  <div class="leaves-overlay"></div>
+  <div class="leaves-bottom"></div>
+
+  <div class="detalhes-content">
+
+    <div class="bear-wrapper">
+      <img
+        src="ursinho.png"
+        alt="Ursinho"
+        class="bear-image"
+      />
+
+      <div class="placa-text">
+        <span class="placa-subtitle">Chá de bebê do</span>
+        <span class="placa-name">SAMUEL</span>
+      </div>
+    </div>
+
+    <p class="invitation-text">
+      Mal cheguei e já quero festa!<br></p>
+
+  </div>
+
+  
+<div class="event-card-wrapper">
+  <div class="event-card">
+    <span class="event-date">06 JUN  • </span>
+    <span class="event-time">16h</span>
+  </div>
+</div>
+
+
+<!-- Botões de ação -->
+<div class="action-buttons">
+
+  <!-- Localização -->
+  <div class="action-item">
+    <a class="action-btn" href="https://maps.app.goo.gl/vpcPzbzczNk3gLwv7" target="_blank">
+      <lucide-icon [img]="MapPin" size="28" color="white"></lucide-icon>
+    </a>
+    <span class="action-label">Localização</span>
+  </div>
+
+  <!-- Confirmar presença -->
+  <div class="action-item">
+    <a class="action-btn" href="https://wa.me/5582991735555?text=Olá!%20Confirmo%20minha%20presença%20no%20Chá%20de%20Bebê%20do%20Samuel!%20🐻" target="_blank">
+     <lucide-icon [img]="MessageCircle" size="28" color="white"></lucide-icon>
+    </a>
+    <span class="action-label">Confirmar<br>presença</span>
+  </div>
+
+  <!-- Sugestão de presente -->
+  <div class="action-item">
+    <button class="action-btn" (click)="abrirModal()">
+      <lucide-icon [img]="Gift" size="28" color="white"></lucide-icon>
+    </button>
+    <span class="action-label">Fralda<br>+ Mimo</span>
+  </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="modalAberto" (click)="fecharModal()">
+  <div class="modal-box" (click)="$event.stopPropagation()">
+
+    <button class="modal-close" (click)="fecharModal()">✕</button>
+
+    <h2 class="modal-title">Sugestões de Presente 🎁</h2>
+
+    <div class="modal-section">
+      <h3 class="modal-section-title">🍼 Fraldas</h3>
+      <ul class="modal-list">
+        <li>Pampers Premium Care</li>
+        <li>Huggies Supreme</li>
+        <li>MamyPoko Pants</li>
+        <li>Turma da Mônica Baby</li>
+      </ul>
+    </div>
+
+    <div class="modal-section">
+      <h3 class="modal-section-title">🧸 Mimos</h3>
+      <ul class="modal-list">
+        <li>Kit toalha fralda</li>
+        <li>Body manga longa</li>
+        <li>Macacão recém-nascido</li>
+        <li>Kit higiene bebê</li>
+        <li>Manta soft</li>
+      </ul>
+    </div>
+
+    <p class="modal-obs">
+      💛 Esses mimos estão disponíveis na loja <strong>Encanto do Bebê</strong>!
+    </p>
+
+  </div>
+</div>
+
+  <div class="bottom-gradient"></div>
+
+</div>

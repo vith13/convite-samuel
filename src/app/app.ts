@@ -1,9 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MusicPlayer } from './components/music-player/music-player';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, MusicPlayer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
